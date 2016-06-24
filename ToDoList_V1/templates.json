@@ -1,0 +1,111 @@
+ccm.callback["templates.json"]( 
+{
+  "listContainer":{
+    "tag": "div",
+    "class": "listContainer",
+    "inner" : [
+      {
+        "tag" : "ul",
+        "class" : "toDoList"
+      },
+      {
+        "tag" : "div",
+        "class" : "radioDiv",
+        "inner" : [
+          {
+            "tag" : "input",
+            "type" : "radio",
+            "id" : "all",
+            "name" : "toDoFilter"
+          },
+          {
+            "tag" : "label",
+            "for" : "all",
+            "inner" : "All"
+          },
+          {
+            "tag" : "br"
+          },
+          
+          {
+            "tag" : "input",
+            "type" : "radio",
+            "id" : "done",
+            "name" : "toDoFilter"
+          },
+          {
+            "tag" : "label",
+            "for" : "done",
+            "inner" : "Only done"
+          },
+          {
+            "tag" : "br"
+          },
+          
+           {
+            "tag" : "input",
+            "type" : "radio",
+            "id" : "open",
+            "name" : "toDoFilter"
+          },
+          {
+            "tag" : "label",
+            "for" : "open",
+            "inner" : "Only open"
+          },
+          {
+            "tag" : "br"
+          }
+        ]
+      },
+      {
+        "tag" : "div",
+        "class" : "newItem",
+        "inner" : [
+          {
+            "tag" : "input",
+            "type" : "text",
+            "class" : "newItemText",
+            "placeholder" : "Neuer Eintrag" 
+          },
+          {
+            "tag" : "input",
+            "type" : "button",
+            "class" : "addButton",
+            "value" : "\u2795"
+          }
+        ]
+      }
+      
+     ]
+  },
+  "listItem":{
+    "tag" : "li",
+    "inner":[
+      {
+        "tag" : "div",
+        "draggable" : "true",
+        "inner":[
+            {
+              "tag" : "span" ,
+              "class" : "user"
+            },
+            {
+              "tag" : "span" ,
+               "class" : "text"
+            },
+            {
+              "tag" : "div",
+              "type" : "button",
+              "class" : "delButton"
+            },
+            {
+              "tag" : "div",
+              "class" : "chkBox"
+            }
+        ]
+      }
+    ]
+  }
+}
+);
