@@ -274,12 +274,15 @@ ccm.component( {
 			);
 			editButton.click(
 				function() {
-					if(self.state.edit[dataset.toDoList[i].id]){
-						disableEdit();
-					} else {
-						enableEdit();
-					}
-					
+					self.user.login( 
+						function () {
+							if(self.state.edit[dataset.toDoList[i].id]){
+								disableEdit();
+							} else {
+								enableEdit();
+							}
+						}
+					);
 				}
 			);
 			
@@ -308,12 +311,14 @@ ccm.component( {
 						itemDescription.bind('input propertychange',
 							function(){
 								dataset.toDoList[i].desc = itemDescription.val();
+								dataset.toDoList[i].user = self.user.data().key;
 								self.store.set( dataset);
 							}
 						);
 						text.bind('input propertychange',
 							function(){
 								dataset.toDoList[i].text = text.val();
+								dataset.toDoList[i].user = self.user.data().key;
 								self.store.set( dataset);
 							}
 						);
